@@ -1,0 +1,1057 @@
+
+
+
+
+
+
+<!DOCTYPE html><html lang="zh-cn"
+      class=""><head><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script><meta charset="utf-8"><meta name="xsrf_token" content="Z4euv-2XHWaH1ES1R2LeihkTDBC3dbQms1wPNq_xPEo6MTUyOTUzMzk2NzExMzgwMA" /><link rel="canonical" href="https://www.tensorflow.org/install/install_linux?hl=zh-cn"><link rel="alternate" href="https://www.tensorflow.org/install/install_linux?hl=zh-cn" hreflang="zh-Hans"><link rel="alternate" href="https://www.tensorflow.org/install/install_linux" hreflang="en"><link rel="alternate" href="https://tensorflow.google.cn/install/install_linux?hl=zh-cn" hreflang="zh-Hans-cn"><link rel="alternate" href="https://tensorflow.google.cn/install/install_linux" hreflang="en-cn"><link rel="alternate" href="https://www.tensorflow.org/install/install_linux" hreflang="x-default"><link rel="shortcut icon" href="https://www.tensorflow.org/_static/f3998f9c12/images/tensorflow/favicon.png"><link rel="apple-touch-icon" href="https://www.tensorflow.org/images/apple-touch-icon-180x180.png"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet"
+      
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons"
+      ><link rel="stylesheet"
+        href="https://www.tensorflow.org/_static/f3998f9c12/css/devsite-tensorflow-orange.css"><link rel="search"
+        type="application/opensearchdescription+xml"
+        title="TensorFlow"
+        href="https://www.tensorflow.org/s/opensearch.xml"><script src="https://www.tensorflow.org/_static/f3998f9c12/js/jquery-bundle.js"></script><meta property="og:site_name" content="TensorFlow"><meta property="og:type" content="website"><meta property="og:url" content="https://www.tensorflow.org/install/install_linux?hl=zh-cn"><meta property="og:locale" content="zh-cn"><script>
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'zh-cn';
+  </script><title>在 Ubuntu 上安装 TensorFlow &nbsp;|&nbsp; TensorFlow</title><meta property="og:title" content="在 Ubuntu 上安装 TensorFlow &nbsp;|&nbsp; TensorFlow"></head><body class="
+               devsite-doc-page
+               
+               
+               
+               
+               devsite-header-no-lower-tabs"
+        
+        
+        id="top_of_page"><div class="devsite-wrapper"><div class="devsite-top-section-wrapper
+            "><header class="devsite-top-section nocontent"><div class="devsite-top-logo-row-wrapper-wrapper"><div class="devsite-top-logo-row-wrapper"><div class="devsite-top-logo-row devsite-full-site-width"><button type="button" class="devsite-expand-section-nav devsite-header-icon-button
+                                       button-flat material-icons gc-analytics-event"
+                  data-category="Site-Wide Custom Events" data-label="Hamburger menu"></button><div class="devsite-product-name-wrapper"><a href="https://www.tensorflow.org/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo"><img src="https://www.tensorflow.org/_static/f3998f9c12/images/tensorflow/lockup.png"
+       class="devsite-site-logo" alt="TensorFlow"><span class="devsite-site-name devsite-product-name">TensorFlow</span></a></div><div class="devsite-header-upper-tabs"><nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper"><ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll"><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/install/"
+         class="devsite-doc-set-nav-active devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         aria-label="安装, selected"
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 安装"
+       >
+        安装
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/get_started/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 开发"
+       >
+        开发
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/api_docs/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: API r1.8"
+       >
+        API r1.8
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/deploy/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 部署"
+       >
+        部署
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/extend/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 扩展"
+       >
+        扩展
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/community/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 社区"
+       >
+        社区
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/versions/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: 版本"
+       >
+        版本
+      </a></li><li class="devsite-doc-set-nav-tab-container devsite-nav-tab
+               "><a href="https://www.tensorflow.org/tfrc/"
+         class=" devsite-nav-tab
+                devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event"
+         
+       
+         data-category="Site-Wide Custom Events"
+       
+         data-label="Tab: TFRC"
+       >
+        TFRC
+      </a></li></ul></nav></div><form class="devsite-search-form"
+                action="https://www.tensorflow.org/s/results/"
+                method="GET"
+                id="top-search"
+                search-placeholder='搜索'><div id="searchbox" class="devsite-searchbox"><input placeholder='搜索'
+         
+         type="text"
+         class="devsite-search-field devsite-search-query"
+         name="q"
+         value=""
+         autocomplete="off"
+         
+         aria-label="搜索框"><div class="devsite-search-image material-icons"></div></div><input type="hidden"
+       name="p"
+       id="search_project"
+       value="/"
+       data-project-name="TensorFlow"
+       data-project-path="/"
+       data-query-match=""><input type="hidden" class="suggest-project" value="TensorFlow" /><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Open Source Project" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Apigee Docs" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Google Cloud Platform" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Dialogflow" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Firebase" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Link.app" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Nest Developers" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="OpenThread" ></div><div class="suggest-project-metadata" data-home_url="https://www.orbitera.com/" data-path="/" data-name="Orbitera" ></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="TensorFlow" ></div></form><a class="devsite-header-link devsite-top-button button gc-analytics-event"
+               href="//github.com/tensorflow"
+               data-category="Site-Wide Custom Events"
+               data-label="Site header link"
+               track-type="navigateTo"
+               track-name="github"
+               track-metadata-position="nav"><div class="devsite-header-link-label">GitHub</div></a><button type="button" class="devsite-search-button devsite-header-icon-button button-flat
+                                       material-icons"></button></div></div></div><div class="devsite-collapsible-section"><div class="devsite-header-background devsite-full-site-width"><div class="devsite-product-id-row devsite-full-site-width"><div class="devsite-product-description-row"><ul class="devsite-breadcrumb-list"><li class="devsite-breadcrumb-item">
+    
+    
+    
+      安装
+    
+    
+  </li></ul></div></div></div></div></header><script>
+    if (window.jQuery) {
+      $(document).ready(function() {
+        if (window.devsite && window.devsite.search) {
+          
+          window.devsite.search.init('zh-cn')
+        }
+      });
+    }
+  </script></div><div id="gc-wrapper"itemscope itemtype="http://schema.org/Article"><input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;zh-cn&quot;, &quot;dimension4&quot;: &quot;TensorFlow&quot;, &quot;dimension5&quot;: &quot;zh-cn&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-69864048-1&quot;}"><script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "userCountry": "TW", "language": {"requested": "zh-cn", "served": "zh-cn"}, "projectName": "TensorFlow", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+
+      
+        <div class="devsite-site-mask"></div>
+        
+  
+
+
+<nav class="devsite-nav-responsive devsite-nav nocontent" tabindex="0">
+  
+  <div class="devsite-nav-responsive-tabs-panel">
+    
+      
+        
+
+
+
+<nav class="devsite-nav-responsive-tabs devsite-nav">
+  <ul class="devsite-nav-list">
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <span class="devsite-nav-responsive-forward devsite-nav-responsive-tab devsite-nav-title
+                   devsite-nav-active gc-analytics-event"
+            data-category="Site-Wide Custom Events" data-label="Responsive Tab: 安装"
+            tabindex="0">
+        安装
+      </span>
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/get_started/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: 开发">
+        开发
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/api_docs/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: API r1.8">
+        API r1.8
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/deploy/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: 部署">
+        部署
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/extend/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: 扩展">
+        扩展
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/community/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: 社区">
+        社区
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/versions/?nav=true"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: 版本">
+        版本
+      </a>
+      
+      
+    
+    </li>
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+    
+      <a 
+           href="https://www.tensorflow.org/tfrc/"
+         
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event
+                "
+         data-category="Site-Wide Custom Events" data-label="Responsive Tab: TFRC">
+        TFRC
+      </a>
+      
+      
+    
+    </li>
+  
+  
+    <li class="devsite-nav-item devsite-nav-item-heading">
+      <a href="//github.com/tensorflow"
+         class="devsite-nav-responsive-tab devsite-nav-title gc-analytics-event"
+         data-category="Site-Wide Custom Events"
+         data-label="Responsive Tab: GitHub">
+        GitHub
+      </a>
+    </li>
+  
+  </ul>
+</nav>
+
+
+      
+    
+  </div>
+  
+  
+  <div class="devsite-nav-responsive-sidebar-panel">
+    
+    <div class="devsite-nav-responsive-back" tabindex="0"></div>
+    
+    <nav class="devsite-nav-responsive-sidebar">
+      
+      
+    </nav>
+  </div>
+  
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</nav>
+
+
+        <div class="devsite-main-content clearfix">
+
+        
+        
+
+        
+  
+  
+    
+    
+      
+  <nav class="devsite-section-nav devsite-nav nocontent">
+    <ul class="devsite-nav-list"><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/" class="devsite-nav-title">安装 TensorFlow</a></li><li class="devsite-nav-item devsite-nav-item-heading"><span class="devsite-nav-title devsite-nav-title-no-path">Python</span></li><li class="devsite-nav-item devsite-nav-active"><a href="https://www.tensorflow.org/install/install_linux" class="devsite-nav-title">Ubuntu</a></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_mac" class="devsite-nav-title">MacOS</a></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_windows" class="devsite-nav-title">Windows</a></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_sources" class="devsite-nav-title">从源代码</a></li><li class="devsite-nav-item"><hr class="devsite-nav-break"></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/migration" class="devsite-nav-title">过渡至 TensorFlow 1.0</a></li><li class="devsite-nav-item devsite-nav-item-heading"><span class="devsite-nav-title devsite-nav-title-no-path">其他编程语言</span></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_java" class="devsite-nav-title">Java</a></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_go" class="devsite-nav-title">Go</a></li><li class="devsite-nav-item"><a href="https://www.tensorflow.org/install/install_c" class="devsite-nav-title">C</a></li></ul>
+  </nav>
+
+    
+
+    
+  <nav class="devsite-page-nav devsite-nav"></nav>
+
+
+      <article class="devsite-article">
+        <article class="devsite-article-inner">
+  
+          
+  
+
+
+<div class="devsite-rating-container
+            "><div class="devsite-rating-stars"><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+         data-rating-val="1" data-category="Site-Wide Custom Events" data-label="Star Rating 1"
+         track-metadata-score="1" track-type="feedback" track-name="rating"
+         track-metadata-position="header"
+         role="button"
+         
+         aria-label="网站内容评分：1 星（最高 5 星）"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+         data-rating-val="2" data-category="Site-Wide Custom Events" data-label="Star Rating 2"
+         track-metadata-score="2" track-type="feedback" track-name="rating"
+         track-metadata-position="header"
+         role="button"
+         
+         aria-label="网站内容评分：2 星（最高 5 星）"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+         data-rating-val="3" data-category="Site-Wide Custom Events" data-label="Star Rating 3"
+         track-metadata-score="3" track-type="feedback" track-name="rating"
+         track-metadata-position="header"
+         role="button"
+         
+         aria-label="网站内容评分：3 星（最高 5 星）"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+         data-rating-val="4" data-category="Site-Wide Custom Events" data-label="Star Rating 4"
+         track-metadata-score="4" track-type="feedback" track-name="rating"
+         track-metadata-position="header"
+         role="button"
+         
+         aria-label="网站内容评分：4 星（最高 5 星）"></div><div class="devsite-rating-star devsite-rating-star-outline gc-analytics-event material-icons"
+         data-rating-val="5" data-category="Site-Wide Custom Events" data-label="Star Rating 5"
+         track-metadata-score="5" track-type="feedback" track-name="rating"
+         track-metadata-position="header"
+         role="button"
+         
+         aria-label="网站内容评分：5 星（最高 5 星）"></div></div><div class="devsite-rating-description"></div><div class="devsite-rating-internal"><span class="devsite-rating-stats"></span></div></div><script>
+  $(document).ready(function() {
+    devsite.ratings.init(
+      document.querySelectorAll('#devsite-feedback-project'), false
+      
+    );
+  });
+</script>
+
+
+  
+  <nav class="devsite-breadcrumb-nav devsite-nav">
+    
+
+
+<ul class="devsite-breadcrumb-list">
+  
+  <li class="devsite-breadcrumb-item">
+    
+    
+    <a href="https://www.tensorflow.org/" class="devsite-breadcrumb-link gc-analytics-event"
+       data-category="Site-Wide Custom Events" data-label="Breadcrumbs"
+       data-value="1">
+    
+    
+      TensorFlow
+    
+    
+    </a>
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item">
+    
+    
+    <div class="devsite-breadcrumb-guillemet material-icons"></div>
+    
+    
+    <a href="https://www.tensorflow.org/install/" class="devsite-breadcrumb-link gc-analytics-event"
+       data-category="Site-Wide Custom Events" data-label="Breadcrumbs"
+       data-value="2">
+    
+    
+      安装
+    
+    
+    </a>
+    
+  </li>
+  
+</ul>
+
+  </nav>
+  
+  
+  <h1 itemprop="name" class="devsite-page-title">
+    在 Ubuntu 上安装 TensorFlow
+  </h1>
+  
+  
+  <nav class="devsite-page-nav-embedded devsite-nav"></nav>
+  
+  <div class="devsite-article-body clearfix
+            "
+       itemprop="articleBody">
+    
+<script src="https://www.tensorflow.org/_static/f3998f9c12/js/managed/mathjax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+
+<!-- DO NOT EDIT! Automatically generated file. -->
+
+
+<p>本指南将介绍如何在 Ubuntu 上安装 TensorFlow。虽然这些说明可能也适用于其他 Linux 版本，但我们只在满足以下要求的计算机上验证过这些说明（而且我们只支持在此类计算机上按这些说明操作）：</p>
+<ul>
+<li>64 位台式机或笔记本电脑</li>
+<li>Ubuntu 16.04 或更高版本</li>
+</ul>
+<h2 id="determine_which_tensorflow_to_install">确定要安装哪种 TensorFlow</h2>
+<p>您必须从以下 TensorFlow 类型中选择其一来进行安装：</p>
+<ul>
+<li><strong>仅支持 CPU 的 TensorFlow</strong>。如果您的系统没有 NVIDIA® GPU，就必须安装此版本。请注意，此版本的 TensorFlow 通常更容易安装（用时通常在 5 或 10 分钟内），所以即使您拥有 NVIDIA GPU，我们也建议先安装此版本。</li>
+<li><strong>支持 GPU 的 TensorFlow</strong>。TensorFlow 程序在 GPU 上的运行速度通常要比在 CPU 上快得多。因此，如果您的系统配有满足以下所示先决条件的 NVIDIA® GPU，并且您需要运行性能至关重要的应用，则最终应安装此版本。</li>
+</ul>
+<p><a name="NVIDIARequirements"></a></p>
+<h3 id="nvidia_requirements_to_run_tensorflow_with_gpu_support">运行支持 GPU 的 TensorFlow 所需满足的 NVIDIA 要求</h3>
+<p>如果您要使用本指南描述的其中一种方式安装支持 GPU 的 TensorFlow，就必须在系统上安装以下 NVIDIA 软件：</p>
+<ul>
+<li>CUDA® 工具包 9.0。如需了解详情，请参阅 <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/#axzz4VZnqTJ2A">NVIDIA 文档</a>。请务必按照 NVIDIA 文档中的说明将相关的 CUDA 路径名附加到 <code>LD_LIBRARY_PATH</code> 环境变量中。</li>
+<li>与 CUDA 工具包 9.0 相关联的 NVIDIA 驱动程序。</li>
+<li>cuDNN v7.0。如需了解详情，请参阅 <a href="https://developer.nvidia.com/cudnn">NVIDIA 文档</a>。请务必按照 NVIDIA 文档中的说明创建 <code>CUDA_HOME</code> 环境变量。</li>
+<li>CUDA 计算能力为 3.0 或更高的 GPU 卡（用于从源代码构建），以及 CUDA 计算能力为 3.5 或更高的 GPU 卡（用于安装我们的二进制文件）。如需了解支持的 GPU 卡的列表，请参阅 <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA 文档</a>。</li>
+<li>
+<p>libcupti-dev 库，这是 NVIDIA CUDA 分析工具接口。此库提供高级分析支持。要安装此库，请针对 CUDA 工具包 8.0 或更高版本发出以下命令：</p>
+<p></p><pre>
+$ <b>sudo apt-get install cuda-command-line-tools</b>
+</pre><p></p>
+<p>并将其路径添加到您的 <code>LD_LIBRARY_PATH</code> 环境变量中：</p>
+<p></p><pre>
+$ <b>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64</b>
+</pre><p></p>
+<p>对于 CUDA 工具包 7.5 或更低版本，请发出以下命令：</p>
+<p></p><pre>
+$ <b>sudo apt-get install libcupti-dev</b>
+</pre><p></p>
+</li>
+</ul>
+<p>如果您已安装前述软件包的旧版本，请升级到指定版本。如果升级不可行，您仍然可以运行支持 GPU 的 TensorFlow，但前提是您需要执行以下操作：</p>
+<ul>
+<li>从源代码安装 TensorFlow（参阅<a href="https://www.tensorflow.org/install/install_sources">从源代码安装 TensorFlow</a> 中的说明）。</li>
+<li>安装或升级到至少以下 NVIDIA 产品版本：<ul>
+<li>CUDA 工具包 7.0 或更高版本</li>
+<li>cuDNN v3 或更高版本</li>
+<li>CUDA 计算能力为 3.0 或更高的 GPU 卡</li>
+</ul>
+</li>
+</ul>
+<h2 id="determine_how_to_install_tensorflow">确定如何安装 TensorFlow</h2>
+<p>您必须选择安装 TensorFlow 的方式。目前可支持如下几种方式：</p>
+<ul>
+<li><a href="#InstallingVirtualenv">Virtualenv</a></li>
+<li><a href="#InstallingNativePip">“原生”pip</a></li>
+<li><a href="#InstallingDocker">Docker</a></li>
+<li><a href="#InstallingAnaconda">Anaconda</a></li>
+<li>从源代码安装（详情请参阅这篇<a href="https://www.tensorflow.org/install/install_sources">单独的指南</a>）。</li>
+</ul>
+<p><strong>我们建议采用 Virtualenv 安装方式。</strong>
+<a href="https://virtualenv.pypa.io/en/stable/">Virtualenv</a> 是一个与其他 Python 开发相互隔离的虚拟 Python 环境，它无法干扰同一计算机上的其他 Python 程序，也不会受其影响。在 Virtualenv 安装过程中，您不仅要安装 TensorFlow，还要安装 TensorFlow 需要的所有软件包。（这一过程其实很简单。）要开始使用 TensorFlow，您只需要“激活”虚拟环境。总而言之，Virtualenv 提供一种安全可靠的机制来安装和运行 TensorFlow。</p>
+<p>原生 pip 会直接在您的系统上安装 TensorFlow，而不是通过任何容器系统。<strong>我们建议希望多用户系统中的每个用户都能使用 TensorFlow 的系统管理员采用原生 pip 安装。</strong> 原生 pip 安装并未隔离在单独的容器中进行，因此可能会干扰系统中其他基于 Python 的安装。但是，如果您熟悉 pip 和您的 Python 环境，通常只需一条命令即可进行原生 pip 安装。</p>
+<p>Docker 会将 TensorFlow 安装与您计算机上之前就已存在的软件包完全隔离开来。Docker 容器包含了 TensorFlow 及其所有依赖项。请注意，Docker 映像可能比较大（数百 MB）。如果您想要将 TensorFlow 整合到已在使用 Docker 的某个更大的应用架构中，则可以选择 Docker 安装。</p>
+<p>在 Anaconda 中，您可以使用 conda 来创建一个虚拟环境。但是，在 Anaconda 内部，我们建议使用 <code>pip install</code> 命令来安装 TensorFlow，而不要使用 <code>conda install</code> 命令。</p>
+<p><strong>注意</strong>：conda 软件包是由社区提供支持的，并没有任何官方支持。也就是说，TensorFlow 团队既不测试也不维护 conda 软件包。若使用该软件包，您需要自行承担相关风险。</p>
+<p><a name="InstallingVirtualenv"></a></p>
+<h2 id="installing_with_virtualenv">使用 Virtualenv 进行安装</h2>
+<p>请按照以下步骤使用 Virtualenv 安装 TensorFlow：</p>
+<ol>
+<li>
+<p>发出下列其中一条命令来安装 pip 和 Virtualenv：</p>
+<p></p><pre>$ <b>sudo apt-get install python-pip python-dev python-virtualenv</b> # for Python 2.7
+$ <b>sudo apt-get install python3-pip python3-dev python-virtualenv</b> # for Python 3.n</pre><p></p>
+</li>
+<li>
+<p>发出下列其中一条命令来创建 Virtualenv 环境：</p>
+<p></p><pre>$ <b>virtualenv --system-site-packages</b> <i>targetDirectory</i> # for Python 2.7
+$ <b>virtualenv --system-site-packages -p python3</b> <i>targetDirectory</i> # for Python 3.n</pre><p></p>
+<p><code><em>targetDirectory</em></code> 用于指定 Virtualenv 树的顶层目录。我们的说明中假定 <code><em>targetDirectory</em></code> 为 <code>~/tensorflow</code>，但您可以选择任何目录。</p>
+</li>
+<li>
+<p>发出下列其中一条命令来激活 Virtualenv 环境：</p>
+<p></p><pre>$ <b>source ~/tensorflow/bin/activate</b> # bash, sh, ksh, or zsh
+$ <b>source ~/tensorflow/bin/activate.csh</b>  # csh or tcsh</pre><p></p>
+<p>执行上述 <tt>source</tt> 命令后，您的提示符应该会变成如下内容：</p>
+<p></p><pre>(tensorflow)$ </pre><p></p>
+</li>
+<li>
+<p>确保安装 pip 8.1 或更高版本：</p>
+<p></p><pre>(tensorflow)$ <b>easy_install -U pip</b></pre><p></p>
+</li>
+<li>
+<p>发出下列其中一条命令以在处于活动状态的 Virtualenv 环境中安装 TensorFlow （我们推荐通过国内的 PyPI 镜像下载）：</p>
+<p></p><pre>(tensorflow)$ <b>pip install --upgrade tensorflow</b>      # for Python 2.7
+(tensorflow)$ <b>pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow</b>     # for Python 3.n
+(tensorflow)$ <b>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu</b>  # for Python 2.7 and GPU
+(tensorflow)$ <b>pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade tensorflow-gpu</b> # for Python 3.n and GPU</pre><p></p>
+<p>如果上述命令执行成功，请跳过第 6 步。如果上述命令执行失败，请执行第 6 步。</p>
+</li>
+<li>
+<p>（可选）如果第 5 步执行失败（通常是因为您所调用的 pip 版本低于 8.1），请发出以下格式的命令来在活动 Virtualenv 环境中安装 TensorFlow：</p>
+<p></p><pre>(tensorflow)$ <b>pip install --upgrade</b> <i>tfBinaryURL</i>   # Python 2.7
+(tensorflow)$ <b>pip3 install --upgrade</b> <i>tfBinaryURL</i>  # Python 3.n </pre><p></p>
+<p>其中 <code><em>tfBinaryURL</em></code> 用于指示 TensorFlow Python 软件包的网址。<code><em>tfBinaryURL</em></code> 的具体值取决于操作系统、Python 版本 和 GPU 支持。请在<a href="#the_url_of_the_tensorflow_python_package">这里</a>查找适合您系统的 <code><em>tfBinaryURL</em></code> 值。例如，如果您要为装有 Python 3.4 的 Linux 安装仅支持 CPU 的 TensorFlow，可发出以下命令来在活动的 Virtualenv 环境中进行安装：</p>
+<p></p><pre>(tensorflow)$ <b>pip3 install --upgrade \
+ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp34-cp34m-linux_x86_64.whl</b></pre><p></p>
+</li>
+</ol>
+<p>如果您遇到任何安装问题，请参阅<a href="#common_installation_problems">常见的安装问题</a>。</p>
+<h3 id="next_steps">后续步骤</h3>
+<p>安装 TensorFlow 后，请<a href="#ValidateYourInstallation">验证安装</a>。</p>
+<p>请注意，每次使用 TensorFlow 时，您都必须激活 Virtualenv 环境。如果 Virtualenv 环境当前未处于活动状态，请调用以下命令之一：</p>
+<pre> $ <b>source ~/tensorflow/bin/activate</b>      # bash, sh, ksh, or zsh
+$ <b>source ~/tensorflow/bin/activate.csh</b>  # csh or tcsh</pre>
+
+<p>在 Virtualenv 环境激活后，您就可以从这个 shell 运行 TensorFlow 程序。您的提示符将变成如下所示，这表示您的 Tensorflow 环境已处于活动状态：</p>
+<pre>(tensorflow)$ </pre>
+
+<p>用完 TensorFlow 后，可以通过发出以下命令调用 <code>deactivate</code> 函数来停用环境：</p>
+<pre>(tensorflow)$ <b>deactivate</b> </pre>
+
+<p>提示符将恢复为您的默认提示符（由 <code>PS1</code> 环境变量所定义）。</p>
+<h3 id="uninstalling_tensorflow">卸载 TensorFlow</h3>
+<p>要卸载 TensorFlow，只需移除您创建的树即可。例如：</p>
+<pre>$ <b>rm -r</b> <i>targetDirectory</i> </pre>
+
+<p><a name="InstallingNativePip"></a></p>
+<h2 id="installing_with_native_pip">使用原生 pip 进行安装</h2>
+<p>您可以通过 pip 安装 TensorFlow，安装流程有两种：一种简单，一种复杂一点。</p>
+<p><strong>注意</strong>：<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/pip_package/setup.py">setup.py 的 REQUIRED_PACKAGES 部分</a>中列出了 pip 将要安装或升级的软件包。</p>
+<h3 id="prerequisite_python_and_pip">先决条件：Python 和 Pip</h3>
+<p>Ubuntu 中已自动安装 Python。请花点时间确认（通过发出 <code>python -V</code> 命令）您的系统中是否已经安装了下列某个 Python 版本：</p>
+<ul>
+<li>Python 2.7</li>
+<li>Python 3.4+</li>
+</ul>
+<p>Ubuntu 上通常已安装 pip 或 pip3 软件包管理器<em></em>。请花点时间确认（通过发出 <code>pip -V</code> 或 <code>pip3 -V</code> 命令）是否已经安装 pip 或 pip3。我们强烈建议使用 8.1 或更高版本的 pip 或 pip3。如果未安装 pip 或 pip3 版本 8.1 或更高版本，请发出以下命令来安装 pip 或升级到最新版本：</p>
+<pre>$ <b>sudo apt-get install python-pip python-dev</b>   # for Python 2.7
+$ <b>sudo apt-get install python3-pip python3-dev</b> # for Python 3.n
+</pre>
+
+<h3 id="install_tensorflow">安装 TensorFlow</h3>
+<p>假设您的 Linux 主机上已安装必备软件，请执行以下步骤：</p>
+<ol>
+<li>
+<p>调用下列其中<strong>一条</strong>命令来安装 TensorFlow：</p>
+<p></p><pre>$ <b>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow</b>      # Python 2.7; CPU support (no GPU support)
+$ <b>pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow</b>     # Python 3.n; CPU support (no GPU support)
+$ <b>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu</b>  # Python 2.7;  GPU support
+$ <b>pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu</b> # Python 3.n; GPU support </pre><p></p>
+<p>如果前面的命令运行完成，您现在应该<a href="#ValidateYourInstallation">验证您的安装</a>。</p>
+</li>
+<li>
+<p>（可选）如果第 1 步执行失败，请通过发出以下格式的命令来安装最新版本的 TensorFlow：</p>
+<p></p><pre>$ <b>sudo pip  install --upgrade</b> <i>tfBinaryURL</i>   # Python 2.7
+$ <b>sudo pip3 install --upgrade</b> <i>tfBinaryURL</i>   # Python 3.n </pre><p></p>
+<p>其中 <code><em>tfBinaryURL</em></code> 用于指示 TensorFlow Python 软件包的网址。<code><em>tfBinaryURL</em></code> 的具体值取决于操作系统、Python 版本 和 GPU 支持。请在<a href="#the_url_of_the_tensorflow_python_package">这里</a>查找适合您系统的 <code><em>tfBinaryURL</em></code> 值。例如，要为装有 Python 3.4 的 Linux 安装仅支持 CPU 的 TensorFlow，可发出以下命令：</p>
+<p></p><pre>
+ $ <b>sudo pip3 install --upgrade \
+ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp34-cp34m-linux_x86_64.whl</b>
+ </pre><p></p>
+<p>如果此步骤执行失败，请参阅<a href="#common_installation_problems">常见安装问题</a>。</p>
+</li>
+</ol>
+<h3 id="next_steps_1">后续步骤</h3>
+<p>安装 TensorFlow 后，请<a href="#ValidateYourInstallation">验证您的安装</a>。</p>
+<h3 id="uninstalling_tensorflow_1">卸载 TensorFlow</h3>
+<p>要卸载 TensorFlow，请发出下列其中一条命令：</p>
+<pre>
+$ <b>sudo pip uninstall tensorflow</b>  # for Python 2.7
+$ <b>sudo pip3 uninstall tensorflow</b> # for Python 3.n
+</pre>
+
+<p><a name="InstallingDocker"></a></p>
+<h2 id="installing_with_docker">使用 Docker 进行安装</h2>
+<p>请按照以下步骤通过 Docker 安装 TensorFlow：</p>
+<ol>
+<li>按照 <a href="http://docs.docker.com/engine/installation/">Docker 文档</a>中的说明在您的计算机上安装 Docker。</li>
+<li>（可选）创建一个名为 <code>docker</code> 的 Linux 组，以支持启动不带 sudo 的容器，具体如 <a href="https://docs.docker.com/engine/installation/linux/linux-postinstall/">Docker 文档</a>中所述。（如果不执行此操作，则每次调用 Docker 时都必须使用 sudo。）</li>
+<li>要安装支持 GPU 的 TensorFlow 版本，您必须先安装 <a href="https://github.com/NVIDIA/nvidia-docker">nvidia-docker</a>（存储在 github 中）。</li>
+<li>启动包含某个 <a href="https://hub.docker.com/r/tensorflow/tensorflow/tags/">TensorFlow 二进制映像</a>的 Docker 容器。</li>
+</ol>
+<p>本部分的其余内容将介绍如何启动 Docker 容器。</p>
+<h3 id="cpu-only">仅支持 CPU</h3>
+<p>要启动仅支持 CPU（即不支持 GPU）的 Docker 容器，请输入以下格式的命令：</p>
+<pre>
+$ docker run -it <i>-p hostPort:containerPort TensorFlowCPUImage</i>
+</pre>
+
+<p>其中：</p>
+<ul>
+<li>“-p hostPort:containerPort”是可选项。<tt><i></i></tt>如果您想从 shell 运行 TensorFlow 程序，请省略此选项。如果您想从 Jupyter Notebook 运行 TensorFlow 程序，请将“hostPort”和“containerPort”设置为 <tt>8888</tt>。<tt><i></i></tt><tt><i></i></tt>如果您想在容器内部运行 TensorBoard，请再添加一个 <code>-p</code> 标志，并将“hostPort”和“containerPort”设置为 6006。<i></i><i></i></li>
+<li>
+<p>“TensorFlowCPUImage”<tt><i></i></tt>是必填项。它用于指示 Docker 容器。请指定如下某个值：</p>
+<ul>
+<li><tt>gcr.io/tensorflow/tensorflow</tt>：TensorFlow CPU 二进制映像。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:latest-devel</tt>：最新的 TensorFlow CPU 二进制映像以及源代码。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:<i>版本</i></tt>：指定的 TensorFlow CPU 二进制映像版本（如 1.1.0rc1）。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:<i>版本</i>-devel</tt>：指定的 TensorFlow GPU 二进制映像版本（如 1.1.0rc1）以及源代码。</li>
+</ul>
+<p><tt>gcr.io</tt> 是 Google Container Registry。请注意，<a href="https://hub.docker.com/r/tensorflow/tensorflow/">dockerhub</a> 上也提供了一些 TensorFlow 映像。</p>
+</li>
+</ul>
+<p>例如，以下命令会在 Docker 容器中启动最新的 TensorFlow CPU 二进制映像，您可以通过该容器在 shell 中运行 TensorFlow 程序：</p>
+<pre>
+$ <b>docker run -it gcr.io/tensorflow/tensorflow bash</b>
+</pre>
+
+<p>以下命令也可在 Docker 容器中启动最新的 TensorFlow CPU 二进制映像。但是，在这个 Docker 容器里，您可以通过 Jupyter Notebook 运行 TensorFlow 程序：</p>
+<pre>
+$ <b>docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</b>
+</pre>
+
+<p>Docker 将在您第一次启动 TensorFlow 二进制映像时下载该映像。</p>
+<h3 id="gpu_support">GPU 支持</h3>
+<p>在安装支持 GPU 的 TensorFlow 之前，请确保您的系统满足所有 <a href="#NVIDIARequirements">NVIDIA 软件要求</a>。要启动支持 NVidia GPU 的 Docker 容器，请输入以下格式的命令：</p>
+<pre>
+$ <b>nvidia-docker run -it</b> <i>-p hostPort:containerPort TensorFlowGPUImage</i>
+</pre>
+
+<p>其中：</p>
+<ul>
+<li>“-p hostPort:containerPort”是可选的。<tt><i></i></tt>如果您想从 shell 运行 TensorFlow 程序，请省略此选项。如果您想从 Jupyter Notebook 运行 TensorFlow 程序，请将“hostPort”和 <code><em>containerPort</em></code> 设置为 <code>8888</code>。<tt><i></i></tt></li>
+<li><i></i>“TensorFlowGPUImage”用于指定 Docker 容器。您必须指定如下某个值：<ul>
+<li><tt>gcr.io/tensorflow/tensorflow:latest-gpu</tt>：最新的 TensorFlow GPU 二进制映像。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:latest-devel-gpu</tt>：最新的 TensorFlow GPU 二进制映像以及源代码。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:<i>版本</i>-gpu</tt>：
+指定的 TensorFlow GPU 二进制映像版本（如 0.12.1）。</li>
+<li><tt>gcr.io/tensorflow/tensorflow:<i>版本</i>-devel-GPU</tt>：指定的 TensorFlow GPU 二进制映像版本（如 0.12.1）以及源代码。</li>
+</ul>
+</li>
+</ul>
+<p>我们建议安装最新 (<code>latest</code>) 的某个版本。例如，以下命令会在 Docker 容器中启动最新的 TensorFlow GPU 二进制映像，您可以通过该容器在 shell 中运行 TensorFlow 程序：</p>
+<pre>
+$ <b>nvidia-docker run -it gcr.io/tensorflow/tensorflow:latest-gpu bash</b>
+</pre>
+
+<p>以下命令也可在 Docker 容器中启动最新的 TensorFlow GPU 二进制映像。在这个 Docker 容器里，您可以通过 Jupyter Notebook 运行 TensorFlow 程序：</p>
+<pre>
+$ <b>nvidia-docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow:latest-gpu</b>
+</pre>
+
+<p>以下命令会安装旧版 TensorFlow (0.12.1)：</p>
+<pre>
+$ <b>nvidia-docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow:0.12.1-gpu</b>
+</pre>
+
+<p>Docker 将在您第一次启动 TensorFlow 二进制映像时下载该映像。有关详情，请参阅 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker">TensorFlow Docker 自述文件</a>。</p>
+<h3 id="next_steps_2">后续步骤</h3>
+<p>您现在应该<a href="#ValidateYourInstallation">验证您的安装</a>。</p>
+<p><a name="InstallingAnaconda"></a></p>
+<h2 id="installing_with_anaconda">使用 Anaconda 进行安装</h2>
+<p>请按照以下步骤在 Anaconda 环境中安装 TensorFlow：</p>
+<ol>
+<li>
+<p>按照 <a href="https://www.continuum.io/downloads">Anaconda 下载网站</a>上的说明下载并安装 Anaconda。</p>
+</li>
+<li>
+<p>调用以下命令创建名为 <tt>tensorflow</tt> 的 conda 环境，以运行某个版本的 Python：</p>
+<p></p><pre>$ <b>conda create -n tensorflow pip python=2.7 # or python=3.3, etc.</b></pre><p></p>
+</li>
+<li>
+<p>发出以下命令以激活 conda 环境：</p>
+<p></p><pre>$ <b>source activate tensorflow</b>
+ (tensorflow)$  # Your prompt should change </pre><p></p>
+</li>
+<li>
+<p>发出以下格式的命令，在您的 conda 环境中安装 TensorFlow：</p>
+<p></p><pre>(tensorflow)$ <b>pip install --ignore-installed --upgrade</b> <i>tfBinaryURL</i></pre><p></p>
+<p>其中 <code><em>tfBinaryURL</em></code> 是 <a href="#the_url_of_the_tensorflow_python_package">TensorFlow Python 软件包的网址</a>。例如，以下命令将在 Python 3.4 环境中安装仅支持 CPU 的 TensorFlow 版本：</p>
+<p></p><pre>
+ (tensorflow)$ <b>pip install --ignore-installed --upgrade \
+ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp34-cp34m-linux_x86_64.whl</b></pre><p></p>
+</li>
+</ol>
+<p><a name="ValidateYourInstallation"></a></p>
+<h2 id="validate_your_installation">验证您的安装</h2>
+<p>要验证您的 TensorFlow 安装，请执行以下操作：</p>
+<ol>
+<li>确保您的环境已准备好运行 TensorFlow 程序。</li>
+<li>运行一个简短的 TensorFlow 程序。</li>
+</ol>
+<h3 id="prepare_your_environment">准备您的环境</h3>
+<p>如果您是在原生 pip、Virtualenv 或 Anaconda 上进行安装，请执行以下操作：</p>
+<ol>
+<li>启动终端。</li>
+<li>如果您是通过 Virtualenv 或 Anaconda 进行安装，请激活您的容器。</li>
+<li>如果您安装了 TensorFlow 源代码，请导航到未包含 TensorFlow 源代码的任何目录。<em></em></li>
+</ol>
+<p>如果您是通过 Docker 进行安装，请启动 Docker 容器以运行 bash。例如：</p>
+<pre>
+$ <b>docker run -it gcr.io/tensorflow/tensorflow bash</b>
+</pre>
+
+<h3 id="run_a_short_tensorflow_program">运行一个简短的 TensorFlow 程序</h3>
+<p>从 shell 中调用 Python，如下所示：</p>
+<pre>$ <b>python</b></pre>
+
+<p>在 Python 交互式 shell 中输入以下几行简短的程序代码：</p>
+<pre class="prettyprint lang-python"><code># Python
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+</code></pre>
+
+<p>如果系统输出以下内容，就说明您可以开始编写 TensorFlow 程序了：</p>
+<pre>Hello, TensorFlow!</pre>
+
+<p>如果您是 TensorFlow 初学者，请参阅 <a href="https://www.tensorflow.org/get_started/premade_estimators">TensorFlow 使用入门</a>。</p>
+<p>如果系统输出一条错误消息而不是问候语，请参阅<a href="#common_installation_problems">常见的安装问题</a>。</p>
+<h2 id="common_installation_problems">常见的安装问题</h2>
+<p>我们借助 Stack Overflow 来记录 TensorFlow 安装问题及其补救措施。下表包含了 Stack Overflow 上一些常见安装问题解答的链接。如果您遇到了下表中未列出的错误消息或其他安装问题，请在 Stack Overflow 上进行搜索。如果 Stack Overflow 中没有显示相关错误消息，请在 Stack Overflow 上提一个新的问题，并指定 <code>tensorflow</code> 标签。</p>
+<table>
+<tbody><tr> <th>Stack Overflow 链接</th> <th>错误消息</th> </tr>
+
+<tr>
+  <td><a href="https://stackoverflow.com/q/36159194">36159194</a></td>
+  <td><pre>
+
+ImportError: libcudart.so.<i>Version</i>: cannot open shared object file:
+  No such file or directory</pre></td>
+</tr>
+
+<tr>
+  <td><a href="https://stackoverflow.com/q/41991101">41991101</a></td>
+  <td><pre>
+
+ImportError: libcudnn.<i>Version</i>: cannot open shared object file:
+  No such file or directory</pre></td>
+</tr>
+
+<tr>
+  <td><a href="http://stackoverflow.com/q/36371137">36371137</a> 以及<a href="#Protobuf31">这里</a></td>
+  <td><pre>
+
+libprotobuf ERROR google/protobuf/src/google/protobuf/io/coded_stream.cc:207] A
+  protocol message was rejected because it was too big (more than 67108864 bytes).
+  To increase the limit (or to disable these warnings), see
+  CodedInputStream::SetTotalBytesLimit() in google/protobuf/io/coded_stream.h.</pre></td>
+</tr>
+
+<tr>
+  <td><a href="https://stackoverflow.com/q/35252888">35252888</a></td>
+  <td><pre>
+
+Error importing tensorflow. Unless you are using bazel, you should
+  not try to import tensorflow from its source directory; please exit the
+  tensorflow source tree, and relaunch your python interpreter from
+  there.</pre></td>
+</tr>
+
+<tr>
+  <td><a href="https://stackoverflow.com/q/33623453">33623453</a></td>
+  <td><pre>
+
+IOError: [Errno 2] No such file or directory:
+  '/tmp/pip-o6Tpui-build/setup.py'</pre>
+</td></tr>
+
+<tr>
+  <td><a href="http://stackoverflow.com/q/42006320">42006320</a></td>
+  <td><pre>
+
+ImportError: Traceback (most recent call last):
+  File ".../tensorflow/core/framework/graph_pb2.py", line 6, in <module>
+  from google.protobuf import descriptor as _descriptor
+  ImportError: cannot import name 'descriptor'</module></pre>
+  </td>
+</tr>
+
+<tr>
+  <td><a href="https://stackoverflow.com/questions/35190574">35190574</a> </td>
+  <td><pre>
+
+SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify
+  failed</pre></td>
+</tr>
+
+<tr>
+  <td><a href="http://stackoverflow.com/q/42009190">42009190</a></td>
+  <td><pre>
+
+  Installing collected packages: setuptools, protobuf, wheel, numpy, tensorflow
+  Found existing installation: setuptools 1.1.6
+  Uninstalling setuptools-1.1.6:
+  Exception:
+  ...
+  [Errno 1] Operation not permitted:
+  '/tmp/pip-a1DXRT-uninstall/.../lib/python/_markerlib' </pre></td>
+</tr>
+
+<tr>
+  <td><a href="http://stackoverflow.com/questions/36933958">36933958</a></td>
+  <td><pre>
+
+  ...
+  Installing collected packages: setuptools, protobuf, wheel, numpy, tensorflow
+  Found existing installation: setuptools 1.1.6
+  Uninstalling setuptools-1.1.6:
+  Exception:
+  ...
+  [Errno 1] Operation not permitted:
+  '/tmp/pip-a1DXRT-uninstall/System/Library/Frameworks/Python.framework/
+   Versions/2.7/Extras/lib/python/_markerlib'</pre>
+  </td>
+</tr>
+
+</tbody></table>
+
+<p><a name="TF_PYTHON_URL"></a></p>
+<h2 id="the_url_of_the_tensorflow_python_package">TensorFlow Python 软件包的网址</h2>
+<p>部分安装方式需要您提供 TensorFlow Python 软件包的网址。您所指定的值取决于三个因素：</p>
+<ul>
+<li>操作系统</li>
+<li>Python 版本</li>
+<li>仅支持 CPU 与支持 GPU</li>
+</ul>
+<p>本部分介绍 Linux 安装的相关值。</p>
+<h3 id="python_27">Python 2.7</h3>
+<p>仅支持 CPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp27-none-linux_x86_64.whl
+</pre>
+
+<p>支持 GPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.6.0-cp27-none-linux_x86_64.whl
+</pre>
+
+<p>请注意，GPU 版本需要<a href="#NVIDIARequirements">运行支持 GPU 的 TensorFlow 所需满足的 NVIDIA 要求</a>中所述的 NVIDIA 硬件和软件。</p>
+<h3 id="python_34">Python 3.4</h3>
+<p>仅支持 CPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp34-cp34m-linux_x86_64.whl
+</pre>
+
+<p>支持 GPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.6.0-cp34-cp34m-linux_x86_64.whl
+</pre>
+
+<p>请注意，GPU 版本需要<a href="#NVIDIARequirements">运行支持 GPU 的 TensorFlow 所需满足的 NVIDIA 要求</a>中所述的 NVIDIA 硬件和软件。</p>
+<h3 id="python_35">Python 3.5</h3>
+<p>仅支持 CPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp35-cp35m-linux_x86_64.whl
+</pre>
+
+<p>支持 GPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.6.0-cp35-cp35m-linux_x86_64.whl
+</pre>
+
+<p>请注意，GPU 版本需要<a href="#NVIDIARequirements">运行支持 GPU 的 TensorFlow 所需满足的 NVIDIA 要求</a>中所述的 NVIDIA 硬件和软件。</p>
+<h3 id="python_36">Python 3.6</h3>
+<p>仅支持 CPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp36-cp36m-linux_x86_64.whl
+</pre>
+
+<p>支持 GPU：</p>
+<pre>
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.6.0-cp36-cp36m-linux_x86_64.whl
+</pre>
+
+<p>请注意，GPU 版本需要<a href="#NVIDIARequirements">运行支持 GPU 的 TensorFlow 所需满足的 NVIDIA 要求</a>中所述的 NVIDIA 硬件和软件。</p>
+
+
+  </div>
+  
+
+  
+        
+  
+
+
+
+
+
+
+
+        
+<div class="devsite-content-footer nocontent">
+  
+  
+    <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="https://developers.google.com/terms/site-policies">Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+
+  
+    
+    <p class="devsite-content-footer-date" itemprop="datePublished"
+       content="2018-05-25T02:36:30.839140">
+      
+      上次更新日期：五月 25, 2018
+    </p>
+  
+
+</div>
+
+        </article>
+      </article>
+  
+
+        </div>
+      
+
+<footer class="devsite-footer-linkboxes nocontent
+               devsite-footer-linkboxes-all-backup
+               "><nav class="devsite-full-site-width"><ul class="devsite-footer-linkboxes-list"><li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">把握动态</h3><ul class="devsite-footer-linkbox-list"><li class="devsite-footer-linkbox-item"><a href="//medium.com/tensorflow" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer Blog Link">
+                博客
+            </a></li><li class="devsite-footer-linkbox-item"><a href="//github.com/tensorflow/" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer GitHub Link">
+                GitHub
+            </a></li><li class="devsite-footer-linkbox-item"><a href="//twitter.com/tensorflow" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer Twitter Link">
+                Twitter
+            </a></li><li class="devsite-footer-linkbox-item"><a href="//youtube.com/tensorflow" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer YouTube Link">
+                YouTube
+            </a></li></ul></li><li class="devsite-footer-linkbox devsite-footer-linkbox-backup"><h3 class="devsite-footer-linkbox-heading">支持</h3><ul class="devsite-footer-linkbox-list"><li class="devsite-footer-linkbox-item"><a href="//github.com/tensorflow/tensorflow/issues" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer Issue Tracker Link">
+                问题跟踪器
+            </a></li><li class="devsite-footer-linkbox-item"><a href="//github.com/tensorflow/tensorflow/blob/master/RELEASE.md" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer Release Notes Link">
+                版本说明
+            </a></li><li class="devsite-footer-linkbox-item"><a href="//stackoverflow.com/questions/tagged/tensorflow" class="gc-analytics-event"
+               data-category="Site-Wide Custom Events"
+               data-label="Footer Stack Overflow Link">
+                Stack Overflow
+            </a></li></ul></li></ul></nav></footer><footer class="devsite-utility-footer"><nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width"><div class="devsite-utility-footer-nav-left"><form class="devsite-utility-footer-language" action="/i18n/setlang/" method="post"><input type="hidden" name="xsrf_token" value="Z4euv-2XHWaH1ES1R2LeihkTDBC3dbQms1wPNq_xPEo6MTUyOTUzMzk2NzExMzgwMA" /><input type="hidden" name="next" value="/install/install_linux"><select class="devsite-utility-footer-language-select kd-select" name="language"
+                track-type="languageSelector" track-name="click"><option value="en"
+                
+                track-type="languageSelector" track-name="changed"
+                track-metadata-original-language="zh-cn"
+                track-metadata-selected-language="en">
+            English
+          </option><option value="zh-cn"
+                 selected="selected" 
+                track-type="languageSelector" track-name="changed"
+                track-metadata-original-language="zh-cn"
+                track-metadata-selected-language="zh-cn">
+            简体中文
+          </option></select></form><span class="devsite-utility-footer-links"><a class="devsite-utility-footer-link gc-analytics-event"
+           href="https://www.google.com/policies/terms/"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer terms link"
+           data-footer-link-id="terms"
+           >条款
+         </a><a class="devsite-utility-footer-link gc-analytics-event"
+           href="https://www.google.com/policies/privacy/"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer privacy link"
+           data-footer-link-id="privacy"
+           >隐私权
+         </a></span></div></nav></footer></div><script async defer src="//www.gstatic.com/feedback/api.js"></script><script src="https://www.tensorflow.org/_static2/f3998f9c12/jsi18n/"></script><script src="https://www.tensorflow.org/_static/f3998f9c12/js/script_foot_closure__zh_cn.js"></script><script src="https://www.tensorflow.org/_static/f3998f9c12/js/script_foot.js"></script><script>
+        (function($) {
+          
+          devsite.devsite.Init($, {'ENABLE_BLOCKED_VIDEO_PLACEHOLDER': 0, 'SITE_NAME': 'tensorflow', 'FULL_SITE_SEARCH_ENABLED': 1, 'ENABLE_CLOUDTRACK': 0, 'VTAGS_ENABLED': 0, 'HISTORY_ENABLED': 0, 'SIDEBAR_MINI_ENABLED': 0, 'VERSION_HASH': 'f3998f9c12', 'SCRIPTSAFE_DOMAIN': 'tensorflow-dot-google-developers.appspot.com', 'ENABLE_BLOCKED_LINK_TOOLTIP': 0, 'ALLOWED_HOSTS': ['.android.com', '.anvato.com', '.apigee.com', '.appspot.com', '.dialogflow.com', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.nest.com', '.openthread.io', '.openweave.io', '.orbitera.com', '.tensorflow.org'], 'BLOCK_RSS_FEEDS': 0},
+                               '[]','zh-cn',
+                               true, '',
+                               {"f62218c009ec029abef196bba5aa34cf": true, "8de7a048f21618359bd37f5ce44be073": false, "098dafe57affddc137df300142652cfd": false, "8e03e230de0bd8a6fe173fdf172e8b3f": true, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "d169d485cf24243a263783dbe42029b1": true, "039e5d84b87fd75807ffb37b7f1bbf2c": true, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, '/',
+                               'https://www.tensorflow.org/');
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+      </script><script>
+      $('.devsite-utility-footer-language-select').each(function() {
+        $(this).change(function(){$('.devsite-utility-footer-language').submit();});
+      });
+      </script></div><span id="devsite-request-elapsed" data-request-elapsed="472.409963608"></span></body></html>
